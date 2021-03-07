@@ -1,10 +1,8 @@
 # 단국대 2020년 가을학기 캐글 뽀개기 강좌
 
-
 ```{note}
-본 페이지는 https://github.com/kaggler-tv/dku-kaggle-class에 있는 컨텐츠를 활용해 제작한 demo 사이트 입니다. 따라서 모든 컨텐츠들의 저작권은 Kaggler-TV에 있습니다.
+Course-website 구축 중 (~2021.03.31)
 ```
-
 
 ## 수업일정
 
