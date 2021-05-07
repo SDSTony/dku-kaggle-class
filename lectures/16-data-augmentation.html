@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16. Data Augmentation &#8212; 단국대 2020 캐글 뽀개기</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "kaggler-tv/dku-kaggle-class");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="17. CNN" href="17-cnn.html" />
+    <link rel="prev" title="데모" href="15-bert.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">단국대 2020 캐글 뽀개기</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main.html">
+   단국대 2020년 가을학기 캐글 뽀개기 강좌
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-intro.html">
+   1장. Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-setup.html">
+   2장. Setup
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="03-pandas-intro.html">
+   3장. Pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-pandas.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-pandas-eda.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="04-numpy-intro.html">
+   4장. Numpy, 선형회귀, 로지스틱회귀
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy-lr.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="05-numerical-features-intro.html">
+   5장. 수치형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-numerical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="06-scikit-learn-intro.html">
+   6장. Scikit-learn, 결정트리
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-scikit-learn.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-decision-trees.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="07-rf-lgb-intro.html">
+   7장. Random Forest, GBM
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-rf-lgb.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-rf.html">
+     Random Forest 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-lightgbm.html">
+     LightGBM 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="08-cv-stacking-intro.html">
+   8장. Cross-Validation, Stacking
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-cv-stacking.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-lr-cv.html">
+     로지스틱 회귀 CV 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-rf-cv.html">
+     Random Forest CV 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-lightgbm-cv.html">
+     LightGBM CV 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-stacking-lr.html">
+     로지스틱 회귀 스태킹 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-stacking-lgb.html">
+     LightGBM 스태킹 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="09-tuning-intro.html">
+   9장. 모델 튜닝, Hyperopt, Optuna
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-tuning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-lightgbm-hyperopt.html">
+     Hyperopt 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-lightgbm-optuna.html">
+     Optuna 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="10-pipeline-make-intro.html">
+   10장. Pipeline, Make
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-pipeline-make.html">
+     이론
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="11-categorical-features-intro.html">
+   11장. 범주형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-categorical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="12-nn-intro.html">
+   12장. 신경망, Keras
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-keras.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-cv.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="13-text-features-intro.html">
+   13장. 문자열변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-text-features.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-lr-tfidf.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="14-embeddings-intro.html">
+   14장. Embedding, RNN
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-embeddings.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-cnn-emb.html">
+     CNN - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-emb.html">
+     LSTM - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-glove.html">
+     LSTM - GloVe 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-attention.html">
+     Attention 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="15-transfer-learning-intro.html">
+   15장. 선학습 임베딩, 전이학습
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-transfer-learning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-bert.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   16장. Data Augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-cnn.html">
+   17장. CNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-image-classification.html">
+   18장. Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-post-processing.html">
+   19장. 후처리, 기타팁
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lectures/16-data-augmentation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kaggler-tv/dku-kaggle-class"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kaggler-tv/dku-kaggle-class/issues/new?title=Issue%20on%20page%20%2Flectures/16-data-augmentation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-augmentation">
+   16.1 Image Augmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-augmentation">
+   16.2 Text Augmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   16.3 참고자료
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-augmentation">
+<h1>16. Data Augmentation<a class="headerlink" href="#data-augmentation" title="Permalink to this headline">¶</a></h1>
+<p>Data augmentation은 기존 데이터에 일정 변환을 가해서 학습/예측을 위한 데이터 양을 늘리는 기법입니다. 일반적으로 이미지 데이터에 사용하는 방법입니다. 예를 들어 그림 16-1 처럼 앵무새 사진이 있을 때 사진을 오른쪽으로 뒤집거나 확대하거나 필터를 추가해서 여러 장의 이미지를 생성하는 방법을 data augmentation이라고 합니다.</p>
+<p>그림 16-1</p>
+<p>이미지를 회전하거나 확대 하거나 축소하는 것 외에도 여러개의 이미지를 결합하는 방식의 data augmentation이 존재합니다. Mixup은 서로 다른 이미지를 투명도를 조정후 겹쳐서 하나의 이미지를 생성하는 것이며 Cutout은 이미지의 일정 부분을 삭제하는 방법입니다. CutMix는 서로 다른 이미지의 일부를 자른 뒤 합쳐서 하나의 이미지를 생성하는 방법입니다.</p>
+<ul class="simple">
+<li><p>그림 16-2 Mixup, Cutout, CutMix 예시</p></li>
+</ul>
+<p>모델 학습시 데이터의 양이 부족할 때 data augmentation을 통해 데이터의 양을 부풀려서 학습이 더 잘되게 할 수 있습니다. 뿐만 아니라 예측 시에도 data augmentation을 적용해서 여러 개의 이미지에 대해 예측한 후 평균을 구해서 최종 예측값을 산출 할 수 있습니다. 예측 시에 data augmentation을 적용하는 과정을 Test time augmentation(TTA)라고 합니다. TTA는 컴퓨터비전 데이터과학 대회에서 일반적으로 사용하는 방법입니다.</p>
+<div class="section" id="image-augmentation">
+<h2>16.1 Image Augmentation<a class="headerlink" href="#image-augmentation" title="Permalink to this headline">¶</a></h2>
+<p>이미지 데이터를 augmentation 할 때 사용가능한 라이브러리를 살펴보겠습니다. <a class="reference external" href="https://scikit-image.org/">Scikit-image</a>는 scikit-learn 개발진이 개발한 라이브러리이며 사용하기가 쉽습니다. Numpy 행렬로 저장된 이미지를 변환하는 기능을 제공합니다. <a class="reference external" href="https://github.com/albumentations-team/albumentations/">Albumentations</a>은 캐글 사용자들이 개발한 라이브러리입니다. 빠른 성능을 보이며 다양한 augmentation 기법들을 지원합니다. 또한 pipeline API를 제공하기 때문에 여러개의 augmentation 기법을 모아 한번에 적용 가능케 합니다. <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator">keras.ImageDataGenerator</a>는 Keras에서 제공하는 함수이며 간단한 augmentation 기법을 제공합니다. 캐글 사용자가 정리한 각종 이미지 augmentation 라이브러리 <a class="reference external" href="https://www.kaggle.com/parulpandey/overview-of-popular-image-augmentation-packages">비교글</a>에서 각 라이브러리에 대한 추가 정보를 살펴볼 수 있습니다.</p>
+</div>
+<div class="section" id="text-augmentation">
+<h2>16.2 Text Augmentation<a class="headerlink" href="#text-augmentation" title="Permalink to this headline">¶</a></h2>
+<p>Text augmentation은 문자열 데이터에 augmentation을 적용하는 방법입니다. Back translation 방법, Easy data augmentation 방법, 그리고 sentence-level transformation 방법이 존재합니다.</p>
+<p>Back translation은 원문 텍스트를 다른 언어로 번역하고 다시 원문으로 번역해서 얻은 데이터를 추가로 사용하는 방법입니다. 예를 들어 영문 데이터를 불어로 번역한 후 다시 영문으로 번역해 추가 데이터로 사용하는 것입니다. 번역을 여러번 거치면서 같은 의미지만 달라진 부분이 있을 수 있기 때문에 이와 같은 방법을 사용해 데이터의 양을 부풀립니다.</p>
+<p>Easy Data Augmentation은 synonym replacement, random insertion, random swap, 그리고 random deletion 방법이 존재합니다. Synonym replacement는 유사어로 단어를 변환하는 방법입니다.</p>
+<ul class="simple">
+<li><p>그림 16-X 원문</p></li>
+<li><p>그림 16-X Synonym Replacement 적용 예시</p></li>
+</ul>
+<p>Random Insertion은 유사어를 문장내 랜덤한 위치에 삽입하는 방법입니다. 문장이 문법적으로 올바르지 않게 변하지만 머신러닝 모델의 성능을 높여주기도 합니다.</p>
+<ul class="simple">
+<li><p>그림 16-X Random Insertion 적용 예시</p></li>
+</ul>
+<p>Random Swap은 무작위로 단어의 위치를 바꾸는 방법 입니다.</p>
+<ul class="simple">
+<li><p>그림 16-X Random Swap 적용 예시</p></li>
+</ul>
+<p>Random Swap은 무작위로 단어를 삭제하는 방법입니다.</p>
+<ul class="simple">
+<li><p>그림 16-X Random Deletion 적용 예시</p></li>
+</ul>
+<p>Sentence-level transformation은 문장 단위로 실시하는 augmentation 기법입니다. Shuffle Sentences와 Exclude Duplicate방법이 존재합니다. Shuffle Sentences는 문단 내의 문장들의 순서를 바꾸는 방법입니다. Exclude Duplicate는 문단 내의 중복 문장을 제거하는 방법입니다.</p>
+<p>이 외에도 character-level transformation 방법이 있습니다. Character-level transformation은 비슷하게 생긴 문자로 대체해서 데이터를 증강하는 방법입니다. 얘를 들어 <code class="docutils literal notranslate"><span class="pre">E</span></code>를 <code class="docutils literal notranslate"><span class="pre">3</span></code>으로 바꾸거나 <code class="docutils literal notranslate"><span class="pre">A</span></code>를 <code class="docutils literal notranslate"><span class="pre">4</span></code>로 바꿔서 증강하는 방법입니다.</p>
+<p>텍스트 augmentation 라이브러리는 이미지 augmentation 라이브러리 처럼 많지는 않습니다. 가장 최근의 나온 라이브러리로 NLPAug 라이브러리가 있습니다. WordNet, word2vec, fasttext, BERT 등의 embedding 방법을 통해 유사어를 찾아 데이터를 증강해줍니다. <a class="reference external" href="https://github.com/makcedward/nlpaug/blob/master/example/textual_language_augmenter.ipynb">예제 코드</a>를 통해 사용법을 자세히 살펴볼 수 있습니다.</p>
+</div>
+<div class="section" id="id1">
+<h2>16.3 참고자료<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/parulpandey/overview-of-popular-image-augmentation-packages">Overview of popular Image Augmentation packages</a></p></li>
+<li><p><a class="reference external" href="https://neptune.ai/blog/data-augmentation-nlp">Data Augmentation in NLP: Best Practices From a Kaggle Master</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/c/tweet-sentiment-extraction/notebooks">Tweet Sentiment Extraction Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/c/nlp-getting-started/notebooks">Real or Not? NLP with Disaster Tweets Notebooks</a></p>
+<ul>
+<li><p><a class="reference external" href="https://www.kaggle.com/nandhuelan/nlp-augmentation-bert">NLP Augmentation_BERT</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="15-bert.html" title="previous page">데모</a>
+    <a class='right-next' id="next-link" href="17-cnn.html" title="next page">17. CNN</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Kaggler-TV<br/>
+        
+            &copy; Copyright 2020-.<br/>
+          <div class="extra_footer">
+            <div class="row_footer"> Website organized by <a href="https://github.com/SDSTony">Sungjin Ahn</a> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandas 데모 - Explarotary Data Analysis &#8212; 단국대 2020 캐글 뽀개기</title>
+    <title>Pandas 데모 - Exploratory Data Analysis &#8212; 단국대 2020 캐글 뽀개기</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -43,6 +43,40 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "kaggler-tv/dku-kaggle-class");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -56,8 +90,8 @@
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="선형회귀 데모" href="04-numpy-lr.html" />
-    <link rel="prev" title="단국대 2020년 가을학기 캐글 뽀개기 강좌" href="../main.html" />
+    <link rel="next" title="4. Numpy" href="04-numpy-intro.html" />
+    <link rel="prev" title="3. Pandas" href="03-pandas.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,34 +129,29 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-intro.html">
+   1장. Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-setup.html">
+   2장. Setup
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="03-pandas-intro.html">
    3장. Pandas
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-numpy-lr.html">
-   4장. Numpy, 선형회귀, 로지스틱회귀
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-numerical-features.html">
-   5장. 수치형변수 가공
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-decision-trees.html">
-   6장. Scikit-learn, 결정트리
-  </a>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="07-lightgbm.html">
-   7장. Random Forest, GBM (1)
-  </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="07-rf.html">
-     7장. Random Forest, GBM (2)
+    <a class="reference internal" href="03-pandas.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     실습
     </a>
    </li>
   </ul>
@@ -130,28 +159,114 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="08-lightgbm-cv.html">
-   8장. Cross-Validation, Stacking (1)
+  <a class="reference internal" href="04-numpy-intro.html">
+   4장. Numpy, 선형회귀, 로지스틱회귀
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy-lr.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="05-numerical-features-intro.html">
+   5장. 수치형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-numerical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="06-scikit-learn-intro.html">
+   6장. Scikit-learn, 결정트리
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-scikit-learn.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-decision-trees.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="07-rf-lgb-intro.html">
+   7장. Random Forest, GBM
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-rf-lgb.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-rf.html">
+     Random Forest 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-lightgbm.html">
+     LightGBM 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="08-cv-stacking-intro.html">
+   8장. Cross-Validation, Stacking
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-cv-stacking.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="08-lr-cv.html">
-     8장. Cross-Validation, Stacking (2)
+     로지스틱 회귀 CV 실습
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-rf-cv.html">
-     8장. Cross-Validation, Stacking (3)
+     Random Forest CV 실습
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08-stacking-lgb.html">
-     8장. Cross-Validation, Stacking (4)
+    <a class="reference internal" href="08-lightgbm-cv.html">
+     LightGBM CV 실습
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-stacking-lr.html">
-     8장. Cross-Validation, Stacking (5)
+     로지스틱 회귀 스태킹 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-stacking-lgb.html">
+     LightGBM 스태킹 실습
     </a>
    </li>
   </ul>
@@ -159,42 +274,89 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="09-lightgbm-hyperopt.html">
-   9장. 모델 튜닝, Hyperopt, Optuna (1)
+  <a class="reference internal" href="09-tuning-intro.html">
+   9장. 모델 튜닝, Hyperopt, Optuna
   </a>
   <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-tuning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-lightgbm-hyperopt.html">
+     Hyperopt 실습
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-lightgbm-optuna.html">
-     9장. 모델 튜닝, Hyperopt, Optuna (2)
+     Optuna 실습
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-categorical-features.html">
-   11장. 범주형변수
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="10-pipeline-make-intro.html">
+   10장. Pipeline, Make
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-pipeline-make.html">
+     이론
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-nn-cv.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="11-categorical-features-intro.html">
+   11장. 범주형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-categorical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="12-nn-intro.html">
    12장. 신경망, Keras
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-keras.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-cv.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-lr-tfidf.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="13-text-features-intro.html">
    13장. 문자열변수 가공
   </a>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="14-cnn-emb.html">
-   14장. Embedding, RNN (1)
-  </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="14-lstm-emb.html">
-     14장. Embedding, RNN (2)
+    <a class="reference internal" href="13-text-features.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-lr-tfidf.html">
+     실습
     </a>
    </li>
   </ul>
@@ -202,13 +364,52 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="15-bert.html">
-   15장. 선학습 임베딩, 전이학습 (1)
+  <a class="reference internal" href="14-embeddings-intro.html">
+   14장. Embedding, RNN
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="15-lstm-glove.html">
-     15장. 선학습 임베딩, 전이학습 (2)
+    <a class="reference internal" href="14-embeddings.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-cnn-emb.html">
+     CNN - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-emb.html">
+     LSTM - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-glove.html">
+     LSTM - GloVe 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-attention.html">
+     Attention 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="15-transfer-learning-intro.html">
+   15장. 선학습 임베딩, 전이학습
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-transfer-learning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-bert.html">
+     실습
     </a>
    </li>
   </ul>
@@ -216,8 +417,23 @@
   </i>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="16-attention.html">
+  <a class="reference internal" href="16-data-augmentation.html">
    16장. Data Augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-cnn.html">
+   17장. CNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-image-classification.html">
+   18장. Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-post-processing.html">
+   19장. 후처리, 기타팁
   </a>
  </li>
 </ul>
@@ -276,11 +492,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/SDSTony/dku-kaggle-class"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/kaggler-tv/dku-kaggle-class"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SDSTony/dku-kaggle-class/issues/new?title=Issue%20on%20page%20%2Flectures/03-pandas-eda.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kaggler-tv/dku-kaggle-class/issues/new?title=Issue%20on%20page%20%2Flectures/03-pandas-eda.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -301,7 +517,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/SDSTony/dku-kaggle-class/master?urlpath=tree/lectures/03-pandas-eda.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kaggler-tv/dku-kaggle-class/master?urlpath=tree/lectures/03-pandas-eda.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -406,8 +622,8 @@
         
               <div>
                 
-  <div class="section" id="pandas-explarotary-data-analysis">
-<h1>Pandas 데모 - Explarotary Data Analysis<a class="headerlink" href="#pandas-explarotary-data-analysis" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pandas-exploratory-data-analysis">
+<h1>Pandas 데모 - Exploratory Data Analysis<a class="headerlink" href="#pandas-exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="import">
 <h2>라이브러리 import 및 설정<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -419,6 +635,8 @@
 </div>
 </div>
 </div>
+<p>Pandas를 실습해보기에 앞서, 노트북 내에서 환경 설정 방법에 대해 알아보겠습니다. 먼저 <code class="docutils literal notranslate"><span class="pre">autoreload</span></code>는 셀 실행을 할 때 마다 자동적으로 필요한 라이브러리들을 불러오게 해주는 기능입니다. <code class="docutils literal notranslate"><span class="pre">autoreload</span></code>는 주피터 노트북에서 기본적으로 제공하는 기능이기 때문에 <code class="docutils literal notranslate"><span class="pre">%reload_ext</span> <span class="pre">autoreload</span></code>를 통해 불러올 수 있습니다. 해당 기능을 사용하면 노트북 실행 후 이후에 설치한 라이브러리, 또는 라이브러리의 코드를 고친 수정된 라이브러리를 셀 실행 전에 자동으로 불러와 줍니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">%reload_ext</span> <span class="pre">autoreload</span></code>를 통해 <code class="docutils literal notranslate"><span class="pre">autoreload</span></code>를 불어온 후에는 레벨을 지정해줘야 하는데 보통 2로 지정합니다. <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>코드는 시각화한 차트들을 노트북 상에서 보여주게 하는 코드입니다. 다음 셀에서는 실습에 필요한 라이브러리들을 불러오겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -432,6 +650,13 @@
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>은 파이썬에서 데이터 시각화를 할 때 사용하는 라이브러리입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>는 파이썬에서 행렬간 연산, 벡터간 연산 등의 선형대수학과 관련된 연산을 지원하는 라이브러리 입니다. 관련해서 4장에서 깊게 다뤄보겠습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pathlib</span></code>은 파일 경로에 대한 처리를 편하게 해주는 라이브러리입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>는 앞서 3장에서 확인한 라이브러리이며 이번 실습에 중심적으로 다뤄볼 예정입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code>은 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>보다 더 퀄리티 있는 시각화를 지원하는 라이브러리입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">warnings</span></code>은 노트북 실행 시 출력되는 여러 경고 문구들을 제거할 때 사용하는 라이브러리입니다.</p>
+<p>아래 셀에서는 시각화와 데이터프레임과 관련된 기본 환경 설정을 진행하겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -443,10 +668,24 @@
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">rcParams['figure.figsize']</span></code>은 시각화 차트의 크기를 설정하는 환경 변수입니다. <code class="docutils literal notranslate"><span class="pre">(16,</span> <span class="pre">8)</span></code>로 설정함으로써 기본적으로 출력되는 차트의 크기를 설정할 수 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">plt.style.use()</span></code>명령어는 시각화 차트의 스타일을 설정하는 명령어 입니다. 이번 실습에서는 <code class="docutils literal notranslate"><span class="pre">fivethirtyeight</span></code> 스타일로 설정을 했습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.set_option()</span></code>는 pandas와 관련된 설정을 하는 명령어 입니다. <code class="docutils literal notranslate"><span class="pre">max_columns</span></code>는 한 화면에서 데이터프레임이 보여주는 열의 개수를 설정하는 옵션이며 <code class="docutils literal notranslate"><span class="pre">pd.set_options('max_columns',</span> <span class="pre">100)</span></code>을 통해 최대 100개의 열까지 출력하도록 설정합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">display.precision</span></code>은 보여주는 소수점의 개수를 조정하는 옵션입니다. <code class="docutils literal notranslate"><span class="pre">pd.set_options('display.precision',</span> <span class="pre">4)</span></code>를 통해 소수점 4째자리까지 화면에 보여주도록 설정합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">warnings.simplefilter('ignore')</span></code>은 모든 경고 문구를 무시하도록 설정하는 명령어입니다.</p>
 </div>
 <div class="section" id="id1">
 <h2>데이터 다운로드<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>데이터는 <a class="reference external" href="https://www.dacon.io/competitions/official/235638/data/">Dacon 단국대 소/중 데이터 분석 AI 경진대회 웹사이트</a>에서 다운로드 받아 <code class="docutils literal notranslate"><span class="pre">../input</span></code> 폴더에 저장.</p>
+<p>데이터는 <a class="reference external" href="https://www.dacon.io/competitions/official/235638/data/">Dacon 단국대 소/중 데이터 분석 AI 경진대회 웹사이트</a>에서 다운로드 받아 <code class="docutils literal notranslate"><span class="pre">../input</span></code> 폴더에 저장합니다. <code class="docutils literal notranslate"><span class="pre">../</span></code>은 상위 폴더를 뜻합니다. 예를들어 폴더 구조를 구조화해서 보여드리면 아래와 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dku</span><span class="o">-</span><span class="n">kaggle</span>
+ <span class="n">L</span> <span class="n">notebook</span>
+  <span class="n">L</span> <span class="mi">03</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="n">eda</span><span class="o">.</span><span class="n">ipynb</span>
+ <span class="n">L</span> <span class="nb">input</span>
+  <span class="n">L</span> <span class="n">train</span><span class="o">.</span><span class="n">csv</span>
+  <span class="n">L</span> <span class="n">test</span><span class="o">.</span><span class="n">csv</span>
+  <span class="n">L</span> <span class="n">sample_submission</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls -alF ../input/
@@ -464,6 +703,9 @@ drwxr-xr-x  13 jeong  staff       416 Sep  6 22:22 <span class=" -Color -Color-B
 </div>
 </div>
 </div>
+<p>주피터 노트북에서는 <code class="docutils literal notranslate"><span class="pre">!</span></code>를 통해 터미널 명령어를 직접 실행할 수 있습니다. 터미널의 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 명령어를 통해 특정 폴더내에 있는 파일을 모두 확인할 수 있습니다. <code class="docutils literal notranslate"><span class="pre">-alF</span></code>는 <code class="docutils literal notranslate"><span class="pre">ls</span></code>가 입력 받는 옵션들이며 어떤 형태로 결과물을 출력할 지 결정합니다. 자세한 사항은 <a class="reference external" href="https://linuxcommand.org/lc3_man_pages/ls1.html">명령어 메뉴얼 페이지</a>에서 확인 가능합니다.</p>
+<p>결론적으로 <code class="docutils literal notranslate"><span class="pre">!ls</span> <span class="pre">-alF</span> <span class="pre">../input/</span></code> 명령어를 통해 <code class="docutils literal notranslate"><span class="pre">../input/</span></code>폴더 내에 train.csv, test.csv, sample_submission.csv 파일이 존재함을 확인할 수 있습니다.</p>
+<p>다음 셀에서는 각 파일에 접근할 수 있는 경로 정보를 변수에 저장하겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../input/&#39;</span><span class="p">)</span>
@@ -475,11 +717,18 @@ drwxr-xr-x  13 jeong  staff       416 Sep  6 22:22 <span class=" -Color -Color-B
 </div>
 </div>
 </div>
+<p>우선 <code class="docutils literal notranslate"><span class="pre">../input/</span></code>폴더를 기본 경로로 <code class="docutils literal notranslate"><span class="pre">data_dir</span></code>변수에 저장합니다. 그리고 해당 폴더 내에 존재하는 <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>와 <code class="docutils literal notranslate"><span class="pre">test.csv</span></code>를 각각 경로에 추가해 <code class="docutils literal notranslate"><span class="pre">trn_file</span></code>과 <code class="docutils literal notranslate"><span class="pre">tst_file</span></code>변수에 저장합니다. <code class="docutils literal notranslate"><span class="pre">feature.csv</span></code>파일은 추후 데이터 탐색을 마치고 생성한 feature들이 저장될 파일입니다. 그래서 해당 파일 경로를 <code class="docutils literal notranslate"><span class="pre">feature_file</span></code>변수에 저장합니다. <code class="docutils literal notranslate"><span class="pre">seed</span></code>는 데이터 샘플링 시 사용할 랜덤 시드 숫자 입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>경로를 지정할 때 pathlib 라이브러리의 Path() 함수를 사용하는 이유는 어느 운영체제에서나 오류 없이 경로가 작동하도록 하기 위함입니다. 윈도우즈에서는 경로를 백슬래쉬()를 통해 입력 받고 리눅스에서는 슬래쉬(/)를 통해 입력 받기 때문입니다.</p>
+<p>참고: <a class="reference external" href="https://medium.com/&#64;ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f">https://medium.com/&#64;ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f</a></p>
+</div>
 </div>
 <div class="section" id="eda">
 <h2>EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>학습데이터 로드<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>아래 코드를 활용해 학습데이터를 불러오겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">trn_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -668,6 +917,9 @@ drwxr-xr-x  13 jeong  staff       416 Sep  6 22:22 <span class=" -Color -Color-B
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>함수에 파일 경로가 저장된 변수인 <code class="docutils literal notranslate"><span class="pre">trn_file</span></code>을 입력해서 학습데이터를 불러올 수 있습니다. 이 때 <code class="docutils literal notranslate"><span class="pre">index_col</span></code>을 지정해서 어떤 열을 인덱스로 사용할 지 지정할 수 있습니다. 지정을 하지 않으면 pandas에서 새로운 인덱스를 0부터 시작해서 생성합니다. 실습에 사용할 <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>의 첫번째 열은 <code class="docutils literal notranslate"><span class="pre">id</span></code>정보를 지니고 있습니다. 해당 열을 인덱스로 사용하기 위해서 첫번째 열을 지칭하는 숫자 0을 <code class="docutils literal notranslate"><span class="pre">index_col</span></code>에 입력합니다.</p>
+<p>불러온 데이터를 <code class="docutils literal notranslate"><span class="pre">trn</span></code>변수에 저장하고 <code class="docutils literal notranslate"><span class="pre">trn.shape</span></code>을 입력하면 데이터프레임의 행의 개수와 열의 개수를 반환합니다. <code class="docutils literal notranslate"><span class="pre">trn</span></code> 데이터에는 320,000개의 행과 19개의 열이 존재함을 알 수 있습니다.</p>
+<p>또한 <code class="docutils literal notranslate"><span class="pre">trn.head()</span></code>는 데이터프레임의 상위 5개의 행을 반환합니다. <code class="docutils literal notranslate"><span class="pre">u</span></code>부터 <code class="docutils literal notranslate"><span class="pre">class</span></code>까지 총 19개의 열이 있음을 확인할 수 있으며, 이 때 <code class="docutils literal notranslate"><span class="pre">class</span></code>는 이번 실습에서 예측해야 할 타겟 변수입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -851,6 +1103,7 @@ drwxr-xr-x  13 jeong  staff       416 Sep  6 22:22 <span class=" -Color -Color-B
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">trn.tail()</span></code>명령어을 통해 하위 5개의 행을 확인할 수 있습니다. 인덱스가 0부터 시작해서 319999까지 있기 때문에 총 320,000개의 행이 존재함을 재확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id3">
 <h3>데이터 개요<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -1081,6 +1334,7 @@ drwxr-xr-x  13 jeong  staff       416 Sep  6 22:22 <span class=" -Color -Color-B
 </table>
 </div></div></div>
 </div>
+<p>Pandas에서 제공하는 함수 중 <code class="docutils literal notranslate"><span class="pre">describe()</span></code>를 사용하면 데이터의 전반적인 개요를 보여줍니다. <code class="docutils literal notranslate"><span class="pre">trn.describe()</span></code>통해 반환된 결과를 확인해보면 <code class="docutils literal notranslate"><span class="pre">u</span></code> 컬럼에 320,000개의 값이 존재하며 해당 값들의 평균이 19.8524이고, 표준편차가 1.9455이며 최솟값이 -17.6875이다 라는 내용을 확인할 수 있습니다. 그래서 특정 열에 저장된 값들에 대한 개요을 빠르게 확인할 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">dtypes</span>
@@ -1112,9 +1366,25 @@ dtype: object
 </div>
 </div>
 </div>
+<p>각 열의 데이터 타입을 확인하기 위해선 <code class="docutils literal notranslate"><span class="pre">.dtypes</span></code>명령어를 사용합니다. <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>는 실수형(float64) 임을 알 수 있고 <code class="docutils literal notranslate"><span class="pre">nObserve</span></code>, <code class="docutils literal notranslate"><span class="pre">nDetect</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>는 정수형(int64) 값을 가지고 있는것을 확인할 수 있습니다. 데이터 타입은 문자열, 날짜형 등 여러개가 존재하지만 <code class="docutils literal notranslate"><span class="pre">trn</span></code>데이터에는 실수형과 정수형만 존재합니다.</p>
 </div>
 <div class="section" id="id4">
 <h3>종속변수 분포<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>이번 실습 데이터를 분석할 때 가장 관심의 대상이 되는 변수는 종속변수인 <code class="docutils literal notranslate"><span class="pre">class</span></code>입니다. 최종적으로 모델을 만들어 <code class="docutils literal notranslate"><span class="pre">class</span></code>를 예측해야 하기 때문입니다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91d8fb7fd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/03-pandas-eda_28_1.png" src="../_images/03-pandas-eda_28_1.png" />
+</div>
+</div>
+<p>종속변수가 어떤 분포를 가지고 있는지 확인하고 싶을 때 단순하게 히스토그램을 그릴 수 있습니다. 원하는 열을 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로 선택한 뒤 <code class="docutils literal notranslate"><span class="pre">.hist()</span></code>명령어를 통해 히스토그램을 그릴 수 있습니다. 히스토그램에서 막대그래프의 크기는 해당 값의 개수를 뜻합니다. <code class="docutils literal notranslate"><span class="pre">class</span></code>에는 2가 가장 많이 존재하며 1이 가장 적게 존재함을 확인할 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
@@ -1130,22 +1400,11 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91d8fb7fd0&gt;
-</pre></div>
-</div>
-<img alt="../_images/03-pandas-eda_18_1.png" src="../_images/03-pandas-eda_18_1.png" />
-</div>
-</div>
+<p>각 값에 대한 구체적인 수치를 확인하고 싶다면 <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>함수를 사용하면 됩니다. 해당 함수를 실행하면 0이 119,996개 존재하며 1이 42,785개 존재하며 2가 152,219개 존재함을 알 수 있습니다. <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>함수만 사용하면 값의 개수를 기준으로 내림차순으로 정렬이 됩니다. 인덱스 값을 기준으로 내림차순 정렬을 해주기 위해 <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code>를 추가적으로 사용합니다.</p>
 </div>
 <div class="section" id="id5">
 <h3>독립변수 분포<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>독립변수에 대한 데이터 탐색도 종속변수 탐색시 사용한 과정과 유사하게 진행할 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -1156,21 +1415,10 @@ Name: class, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91c87b9250&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_20_1.png" src="../_images/03-pandas-eda_20_1.png" />
+<img alt="../_images/03-pandas-eda_34_1.png" src="../_images/03-pandas-eda_34_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.  , 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09])
-</pre></div>
-</div>
-</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code>열의 분포를 알고 싶을 때 위와 같이 <code class="docutils literal notranslate"><span class="pre">i</span></code>컬럼을 선택한 후 <code class="docutils literal notranslate"><span class="pre">hist()</span></code>함수를 사용하면 됩니다. 이 때 <code class="docutils literal notranslate"><span class="pre">bins</span></code>는 히스토그램을 그릴 시 사용할 막대의 개수를 뜻합니다. 현재 100개의 막대를 활용해 히스토그램을 그렸으며 대부분의 값이 0에 집중되어 있는 것을 확인할 수 있습니다. 다른 범위에 있는 값은 상대적으로 적어서 막대의 크기가 작아 현재 그래프에는 가시적으로 보이지 않습니다. 최솟값은 대략 -25,000에 위치하고 있음을 알 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">))</span>
@@ -1194,6 +1442,8 @@ Name: i, Length: 100, dtype: float64
 </div>
 </div>
 </div>
+<p>만약 특정 열에 존재하는 값의 백분위수를 확인하고 싶을 때는 <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code>함수를 사용하면 됩니다. 해당 함수의 파라미터로는 확인하고자 하는 백분위 지점을 지정해줍니다. 예를 들어 <code class="docutils literal notranslate"><span class="pre">np.arange(0,</span> <span class="pre">1,</span> <span class="pre">.01)</span></code>함수는 0 부터 1까지 0.01 씩 증가하는 수들을 반환해줍니다. 그래서 위 셀에서는 <code class="docutils literal notranslate"><span class="pre">i</span></code>컬럼의 존재하는 값들을 차례대로 나열했을 때 0%  지점에 있는 값, 1% 지점에 있는 값, 2% 지점에 있는 값 부터 해서 99% 지점에 있는 값까지 출력된 것을 확인할 수 있습니다.</p>
+<p>결과를 확인해보면 최솟값은 -23,955이지만 그 외의 대부분의 값은 14와 20사이에 존재하는 것을 확인할 수 있습니다. 그렇다면 얼마나 많은 값이 음수인지 확인하고자 할 때는 아래 코드를 활용하면 됩니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -1355,6 +1605,8 @@ Name: i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code>열에 있는 값이 0보다 작은 모든 행을 확인하고자 할 때는 <code class="docutils literal notranslate"><span class="pre">trn[</span></code>i<code class="docutils literal notranslate"><span class="pre">]</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> 조건문을 형성한 후 <code class="docutils literal notranslate"><span class="pre">loc[]</span></code>를 활용하면 됩니다. 결과를 확인해 보면 총 320,000개의 행 중에서 4개 행만 <code class="docutils literal notranslate"><span class="pre">i</span></code>열에 음수가 존재함을 알 수 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code>열과 이름이 유사한 열로 <code class="docutils literal notranslate"><span class="pre">dered_i</span></code>열이 있습니다. <code class="docutils literal notranslate"><span class="pre">dered_i</span></code>열의 값 분포 또한 <code class="docutils literal notranslate"><span class="pre">i</span></code>열과 유사한지 확인해보기 위해 아래 코드를 활용해서 백분위수를 탐색해보겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;dered_i&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">))</span>
@@ -1378,6 +1630,7 @@ Name: dered_i, Length: 100, dtype: float64
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code>열과 마찬가지로 0%에 해당하는 값은 음수이며 1% 부터 99%에 해당하는 값은 14부터 20사이의 값 임을 알 수 있습니다. 두 개의 열의 값의 분포가 유사함을 알 수 있습니다. 다음 셀에서는 <code class="docutils literal notranslate"><span class="pre">dered_i</span></code>열에 존재하는 음수 값의 개수를 확인해보겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">trn</span><span class="p">[</span><span class="s1">&#39;dered_i&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -1605,9 +1858,12 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">dered_i</span></code>열에 존재하는 음수 값은 7개로 <code class="docutils literal notranslate"><span class="pre">i</span></code>열보다는 음수 값의 개수가 많은 것을 알 수 있습니다. 이렇게 조건문과 <code class="docutils literal notranslate"><span class="pre">loc[]</span></code>기능을 활용해 특정 조건에 맞는 데이터만 추출해서 확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id6">
 <h3>시각화<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>데이터 탐색을 할 때 가장 많이 사용하는 것이 시각화 입니다. 일반적으로 수치값을 하나씩 보는 것 보다 시각화된 그림을 보면 데이터에 존재하는 패턴을 쉽게 알아볼 수 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">trn</span></code>데이터에는 32만개의 행이 존재하는데, 해당 행을 모두 시각화 하면 가시적으로 확인하기도 어렵고 그림을 표출하는데 시간이 오래 걸립니다. 그래서 시각화 할 때는 데이터 샘플링을 통해 시각화 하고자하는 데이터 크기를 줄여서 진행하는 것이 효율적입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn_sample</span> <span class="o">=</span> <span class="n">trn</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
@@ -1615,6 +1871,7 @@ Name: dered_i, Length: 100, dtype: float64
 </div>
 </div>
 </div>
+<p>Pandas에서는 <code class="docutils literal notranslate"><span class="pre">sample()</span></code> 함수를 활용해 쉽게 데이터를 샘플링할 수 있습니다. 위 예시에서는 1만개의 행을 샘플링 한 예시입니다. 샘플링은 랜덤하게 이뤄지는데 랜덤한 경우를 어느 정도 제어하기 위해서 시드(seed)값을 줄 수 있습니다. 앞에서 <code class="docutils literal notranslate"><span class="pre">seed</span></code>변수에 42를 저장했기 때문에 해당 값으로 시드값을 고정시켜 두고 데이터를 1만개 추출한 것을 <code class="docutils literal notranslate"><span class="pre">trn_sample</span></code>변수에 저장했습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trn_sample</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1625,9 +1882,16 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f9208cb8250&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_28_1.png" src="../_images/03-pandas-eda_28_1.png" />
+<img alt="../_images/03-pandas-eda_48_1.png" src="../_images/03-pandas-eda_48_1.png" />
 </div>
 </div>
+<p>시각화할 때 유용한 함수로 seaborn 라이브러리에서 제공하는 <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>함수가 있습니다. 해당 함수에 5개의 열을 입력하고 종속변수를 명시하면 5개 열에 대한 분포와 종속변수 간의 상관관계를 그래프로 나타냅니다.</p>
+<p>x축은 왼쪽 부터 <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>열을 나타내고 y축 또한 위쪽에서 부터 아래쪽으로 <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>열을 나타냅니다.</p>
+<p>해당 그림에서 우하향하는 대각선에 위치한 5개의 그래프는 각각 <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>에 대한 분포를 <code class="docutils literal notranslate"><span class="pre">class</span></code> 값을 기준으로 보여줍니다. 우측 중앙에 있는 범례를 확인해보면 파란색은 0, 빨간색은 1, 노란색은 2를 뜻하는 것을 알 수 있습니다. 그러므로 각 <code class="docutils literal notranslate"><span class="pre">class</span></code>별 분포를 나타내는 곡선에 차이가 클수록 해당 변수가 <code class="docutils literal notranslate"><span class="pre">class</span></code>를 예측할 때 유용함을 한 눈에 확인할 수 있습니다.</p>
+<p>예를 들어 좌측 최상단에 있는 <code class="docutils literal notranslate"><span class="pre">u</span></code>의 분포를 나타내는 그래프를 보면 <code class="docutils literal notranslate"><span class="pre">u</span></code>를 활용해서 0을 구분하는것이 1이나 2를 구분하는 것보다 상대적을 쉬울 것임을 알 수 있습니다.</p>
+<p>또한 좌측 최하단에 있는 그래프는 <code class="docutils literal notranslate"><span class="pre">u</span></code>와 <code class="docutils literal notranslate"><span class="pre">z</span></code>간의 관계를 산점도로 나타내고 있습니다. 대략 양의 상관관계를 가지고 있음을 알 수 있으며, 그 외의 컬럼들 또한 대부분 양의 상관관계를 가지고 있음을 알 수 있습니다.</p>
+<p>이렇게 시각화를 한다면 데이터의 전반적인 패턴을 한눈에 확인할 수 있으며 특이한 점이 부각되면 한 눈에 알아채서 추가 조사를 위한 코딩을 시작할 수 있습니다.</p>
+<p>아래는 <code class="docutils literal notranslate"><span class="pre">dered_u</span></code>, <code class="docutils literal notranslate"><span class="pre">dered_g</span></code>, <code class="docutils literal notranslate"><span class="pre">dered_r</span></code>, <code class="docutils literal notranslate"><span class="pre">dered_i</span></code>, <code class="docutils literal notranslate"><span class="pre">dered_z</span></code> 열과 <code class="docutils literal notranslate"><span class="pre">class</span></code>열에 대해 <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>을 적용한 예시입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trn_sample</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dered_u&#39;</span><span class="p">,</span> <span class="s1">&#39;dered_g&#39;</span><span class="p">,</span> <span class="s1">&#39;dered_r&#39;</span><span class="p">,</span> <span class="s1">&#39;dered_i&#39;</span><span class="p">,</span> <span class="s1">&#39;dered_z&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1638,9 +1902,10 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f91a8088a10&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_29_1.png" src="../_images/03-pandas-eda_29_1.png" />
+<img alt="../_images/03-pandas-eda_50_1.png" src="../_images/03-pandas-eda_50_1.png" />
 </div>
 </div>
+<p>아래는 <code class="docutils literal notranslate"><span class="pre">airmass_u</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_g</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_r</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_i</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_z</span></code> 열과 <code class="docutils literal notranslate"><span class="pre">class</span></code>열에 대해 <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>을 적용한 예시입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trn_sample</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;airmass_u&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_g&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_r&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_i&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_z&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1651,9 +1916,11 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f91f9152290&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_30_1.png" src="../_images/03-pandas-eda_30_1.png" />
+<img alt="../_images/03-pandas-eda_52_1.png" src="../_images/03-pandas-eda_52_1.png" />
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">airmass</span></code>로 시작하는 열은 특이한 점이 5개의 열간의 값의 분포가 거의 일치합니다. 즉 5개의 열이 모두 같은 정보를 저장하고 있기 때문에 이 경우 하나의 열만 필요하고 나머지 열은 삭제해도 모델링에는 큰 영향을 주지 않겠구나라는 것을 시각화를 통해 한번에 확인할 수 있습니다.</p>
+<p>아래는 <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">dered_u</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_u</span></code>열과 <code class="docutils literal notranslate"><span class="pre">class</span></code>열 간의 관계를 <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>으로 시각화한 그림입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trn_sample</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;dered_u&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_u&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1664,9 +1931,10 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f91c903f750&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_31_1.png" src="../_images/03-pandas-eda_31_1.png" />
+<img alt="../_images/03-pandas-eda_54_1.png" src="../_images/03-pandas-eda_54_1.png" />
 </div>
 </div>
+<p>아래는 <code class="docutils literal notranslate"><span class="pre">redshit</span></code>, <code class="docutils literal notranslate"><span class="pre">nObserve</span></code>, <code class="docutils literal notranslate"><span class="pre">nDetect</span></code>열과 <code class="docutils literal notranslate"><span class="pre">class</span></code>열 간의 관계를 <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>으로 시각화한 그림입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">trn_sample</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">,</span> <span class="s1">&#39;nObserve&#39;</span><span class="p">,</span> <span class="s1">&#39;nDetect&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1677,9 +1945,10 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f91d97e62d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_32_1.png" src="../_images/03-pandas-eda_32_1.png" />
+<img alt="../_images/03-pandas-eda_56_1.png" src="../_images/03-pandas-eda_56_1.png" />
 </div>
 </div>
+<p>Pandas에서 주로 사용하는 함수 중 하나로 <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>가 있습니다. 특정 열의 값으로 데이터프레임을 그룹화 한 뒤 각 그룹에 대해 연산을 적용할 때 사용합니다. 예를 들어 아래의 예시는 <code class="docutils literal notranslate"><span class="pre">class</span></code>열에 있는 값인 0, 1, 2를 기준으로 그룹을 지은 후 각 그룹에 대한 평균값을 확인할 때 사용합니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1814,6 +2083,8 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>실행 결과를 확인해 보면 0, 1, 2 각각의 <code class="docutils literal notranslate"><span class="pre">class</span></code>에 대해서 모든 열의 평균값을 확인할 수 있습니다. 그래서 한 줄의 코드로 특정 그룹에 대한 다양한 연산 결과를 확인해 볼 수 있어서 굉장히 유용한 기능입니다.</p>
+<p>만약 결과를 그래프로 확인하고자 하면 <code class="docutils literal notranslate"><span class="pre">plot()</span></code>함수를 사용하면 됩니다. 아래 코드를 해석하면 우선 <code class="docutils literal notranslate"><span class="pre">trn.groupby('class').mean()</span></code>을 통해 그룹별 평균값을 구한 뒤 <code class="docutils literal notranslate"><span class="pre">T</span></code>를 통해 행과 열을 반대로 바꾼 전치행렬을 구합니다. 해당 작업은 시각화를 하기 위한 보조 작업입니다. 그리고 나서 <code class="docutils literal notranslate"><span class="pre">plot(kind=barh)</span></code>함수를 통해 막대그래프를 그릴 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trn</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">)</span>
@@ -1824,12 +2095,14 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91d99b1150&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_34_1.png" src="../_images/03-pandas-eda_34_1.png" />
+<img alt="../_images/03-pandas-eda_60_1.png" src="../_images/03-pandas-eda_60_1.png" />
 </div>
 </div>
+<p>위의 시각화를 해석해보면 <code class="docutils literal notranslate"><span class="pre">airmass</span></code>로 시작하는 컬럼은 평균값이 모두 같은 것을 볼 수 있습니다. 즉, 하나의 열만 남겨두고 나머지는 삭제해도 됨을 확인할 수 있습니다. 또한 다른 열을 통해 일반적으로 <code class="docutils literal notranslate"><span class="pre">class</span></code>가 0일 때 평균값이 높고 2일 때 평균값이 낮은 것을 확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id7">
 <h3>시험 데이터 로드<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>지금 부터는 피쳐를 변환하고 새로운 피쳐를 생성하는 것을 실습해보겠습니다. 학습 데이터와 시험 데이터에 공통적으로 피쳐 변화을 진행하고 새로운 피쳐를 생성해두기 위해 아래 코드를 통해 시험 데이터를 불러오겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tst</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">tst_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -2202,6 +2475,9 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>피처를 한번에 처리해주기 위해 학습 데이터와 시험 데이터 결합을 <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>함수를 활용해 진행하겠습니다. <code class="docutils literal notranslate"><span class="pre">axis</span></code>에 0을 주면 위 아래로 데이터프레임을 붙여서 결합한다는 의미이며 1을 입력하면 좌우로 데이터프레임을 붙여서 결합한다는 뜻입니다.</p>
+<p>결합한 데이터를 <code class="docutils literal notranslate"><span class="pre">df</span></code>변수에 저장하고 <code class="docutils literal notranslate"><span class="pre">shape</span></code>를 확인해보면 총 40만개의 행이 존재함을 알 수 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">tail()</span></code>함수를 통해 가장 아래 5개의 행을 확인해보면 <code class="docutils literal notranslate"><span class="pre">class</span></code>열에 결측값인 NaN이 존재함을 알 수 있습니다. 학습 데이터에는 <code class="docutils literal notranslate"><span class="pre">class</span></code>값이 존재하지만 시험 데이터의 <code class="docutils literal notranslate"><span class="pre">class</span></code>는 예측을 해야 하는 대상이기 때문에 값이 존재하지 않습니다. <code class="docutils literal notranslate"><span class="pre">concat()</span></code>을 하는 과정에서 NaN값이 들어간 것을 확인할 수 있습니다. 하지만 데이터 처리를 하기 위해선 NaN값을 특정 값으로 대치를 해야 합니다. 그래서 아래 코드를 활용해 NaN값을 -1로 대치해보겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2386,6 +2662,8 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">class</span></code>에는 0, 1, 2가 존재하기 때문에 <code class="docutils literal notranslate"><span class="pre">class</span></code>에 없는 값인 -1로 결측값을 대치하기 위해 <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>함수에 -1을 입력으로 줍니다.</p>
+<p>df를 확인해보면 <code class="docutils literal notranslate"><span class="pre">class</span></code>에 있던 결측값이 -1로 대치된 것을 확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id9">
 <h3>피쳐 변환<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
@@ -2399,9 +2677,10 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91d9f3cc10&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_41_1.png" src="../_images/03-pandas-eda_41_1.png" />
+<img alt="../_images/03-pandas-eda_71_1.png" src="../_images/03-pandas-eda_71_1.png" />
 </div>
 </div>
+<p>피쳐 변환을 하기 위해 <code class="docutils literal notranslate"><span class="pre">nObserve</span></code>변수의 분포를 확인해보겠습니다. 왼쪽에 쏠려 있음을 확인할 수 있으며 이러한 분포를 지수 분포(exponential distribution)이라고 합니다. 이런 경우 log변환을 취해주는 것이 일반적입니다. 아래 코드를 활용해 로그변환을 진행해보겠습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;nObserve&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;nObserve&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">)</span>
@@ -2409,6 +2688,7 @@ Name: dered_i, Length: 100, dtype: float64
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code>함수를 활용해 해당 열에 있는 모든 값에 로그변환을 취해줄 수 있습니다. numpy에서 제공하는 <code class="docutils literal notranslate"><span class="pre">log1p()</span></code>함수는 원본 값에 1을 더한 후 로그를 취해주는 함수입니다. 1을 더해주는 이유는 원본 값에 0이 있는 경우 로그를 취하면 음의 무한대가 나오기 때문에 1을 더해줘서 무한대가 나오는 경우를 없애주기 위함입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;nObserve&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
@@ -2419,12 +2699,14 @@ Name: dered_i, Length: 100, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f91f960ba50&gt;
 </pre></div>
 </div>
-<img alt="../_images/03-pandas-eda_43_1.png" src="../_images/03-pandas-eda_43_1.png" />
+<img alt="../_images/03-pandas-eda_75_1.png" src="../_images/03-pandas-eda_75_1.png" />
 </div>
 </div>
+<p>변경된 값으로 히스토그램을 그려보면 이전에는 최댓값이 약 40이였는데 변경 후 약 3.5로 변한것을 확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id10">
 <h3>피쳐 생성<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>사칙연산을 통해서 새로운 피쳐를 생성할 수도 있습니다. 아래 코드는 빼기 연산을 통해 새로운 피쳐를 생성해 추가하는 코드입니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;d_dered_u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;dered_u&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
@@ -2708,9 +2990,11 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>새로운 피쳐를 추가했기 때문에 기존 19개의 열에서 31개의 열로 증가한 것을 확인할 수 있습니다.</p>
 </div>
 <div class="section" id="id11">
 <h3>피쳐 삭제<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>또한 불필요한 피쳐는 삭제를 할 수도 있습니다. 불필요한 피쳐를 찾는 대표적인 방법으로 피쳐간 상관계수를 확인하는 방법이 있습니다. 상관계수가 높은 피쳐는 서로 중복된 정보가 존재한다는 뜻이므로 하나의 피쳐만 남기고 나머지는 삭제를 할 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">()</span>
@@ -6659,6 +6943,10 @@ Name: dered_i, Length: 100, dtype: float64
             </tr>
     </tbody></table></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">corr()</span></code>함수를 통해 컬럼 간의 상관계수를 확인할 수 있으며 <code class="docutils literal notranslate"><span class="pre">style.background_gradient()</span></code>를 통해 상관계수 크기에 따라 색을 입힐 수 있습니다. 색의 밝기에 따라 어떤 컬럼 간의 상관계수가 높고 낮은지 한 눈에 확인할 수 있습니다.</p>
+<p>위 그래프를 통해 상관계수가 높은 변수 중 하나는 제거할 수 있습니다. 예를 들어 <code class="docutils literal notranslate"><span class="pre">u</span></code>와 <code class="docutils literal notranslate"><span class="pre">dered_u</span></code>간의 상관계수가 0.9347이므로 둘 중의 하나만 사용하고 나머지는 삭제할 수 있습니다.</p>
+<p>또한 <code class="docutils literal notranslate"><span class="pre">airmass_u</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_g</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_r</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_i</span></code>, <code class="docutils literal notranslate"><span class="pre">airmass_z</span></code>간의 상관계수가 상당히 높은 것을 볼 수 있습니다. 5개 중에 하나의 열만 사용하면 됨을 알 수 있습니다.</p>
+<p>삭제하고자 하는 열은 <code class="docutils literal notranslate"><span class="pre">drop()</span></code>함수를 통해 삭제가 가능합니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;airmass_z&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_i&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_r&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass_g&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;nDetect&#39;</span><span class="p">,</span> <span class="s1">&#39;d_dered_rg&#39;</span><span class="p">,</span> <span class="s1">&#39;d_dered_ri&#39;</span><span class="p">],</span> 
@@ -6855,9 +7143,11 @@ Name: dered_i, Length: 100, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">drop()</span></code>함수에서 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>은 열을 제거하겠다는 의미이며 <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>는 삭제한 결과를 원본 데이터프레임에 다시 저장하겠다는 의미입니다. 삭제하기 전에는 총 31개의 열이 존재했는데 삭제 후에는 20개의 열만 존재함을 알 수 있습니다.</p>
 </div>
 <div class="section" id="id12">
 <h3>새로운 학습 데이터 파일 저장<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>피쳐 변환과 생성과 삭제가 완료된 파일을 저장하기 위해선 <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code>함수를 통해 가능합니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">feature_file</span><span class="p">)</span>
@@ -6865,6 +7155,7 @@ Name: dered_i, Length: 100, dtype: float64
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">to_csv()</span></code>함수는 입력값으로 파일을 저장하고자 하는 파일 경로를 입력으로 받습니다. 앞서 <code class="docutils literal notranslate"><span class="pre">feature_file</span></code>변수에 <code class="docutils literal notranslate"><span class="pre">../input/feature.csv</span></code>을 경로를 저장해두었으므로, 해당 경로에 데이터프레임이 저장됩니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls -alF ../input/
@@ -6883,6 +7174,7 @@ drwxr-xr-x  13 jeong  staff        416 Sep  6 22:22 <span class=" -Color -Color-
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">../input/</span></code>폴더 내의 파일을 확인해보면 <code class="docutils literal notranslate"><span class="pre">feature.csv</span></code>파일이 새로 생성된 것을 확인할 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">feature_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -7078,6 +7370,7 @@ drwxr-xr-x  13 jeong  staff        416 Sep  6 22:22 <span class=" -Color -Color-
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">feature.csv</span></code>파일을 <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>함수를 활용해 읽어와서 내용물을 확인해볼 수 있습니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">feature</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">()</span>
@@ -8749,6 +9042,7 @@ drwxr-xr-x  13 jeong  staff        416 Sep  6 22:22 <span class=" -Color -Color-
             </tr>
     </tbody></table></div></div>
 </div>
+<p>지금까지 Pandas 실습을 진행해보았습니다. 처음 pandas를 접하신 분은 실습 진행이 어려웠을 수도 있습니다. 하지만 좌절하지 마시고 계속 연습하다 보면 익숙해질 것입니다. 데이터 분석을 할 때는 Pandas의 약 10개 정도의 함수를 반복적으로 사용하기 때문에 해당 함수만 익숙해지면 다양한 데이터를 손쉽게 분석 하실 수 있을 것입니다. 다음 장에서는 Numpy 라이브러리를 배워보도록 하겠습니다.</p>
 </div>
 </div>
 </div>
@@ -8781,8 +9075,8 @@ drwxr-xr-x  13 jeong  staff        416 Sep  6 22:22 <span class=" -Color -Color-
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../main.html" title="previous page">단국대 2020년 가을학기 캐글 뽀개기 강좌</a>
-    <a class='right-next' id="next-link" href="04-numpy-lr.html" title="next page">선형회귀 데모</a>
+    <a class='left-prev' id="prev-link" href="03-pandas.html" title="previous page">3. Pandas</a>
+    <a class='right-next' id="next-link" href="04-numpy-intro.html" title="next page">4. Numpy</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -8791,7 +9085,10 @@ drwxr-xr-x  13 jeong  staff        416 Sep  6 22:22 <span class=" -Color -Color-
         
           By Kaggler-TV<br/>
         
-            &copy; Copyright 2020-2021.<br/>
+            &copy; Copyright 2020-.<br/>
+          <div class="extra_footer">
+            <div class="row_footer"> Website organized by <a href="https://github.com/SDSTony">Sungjin Ahn</a> </div>
+          </div>
       </p>
     </div>
   </footer>

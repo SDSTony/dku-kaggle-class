@@ -43,6 +43,40 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "kaggler-tv/dku-kaggle-class");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -56,7 +90,7 @@
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="데모" href="08-stacking-lgb.html" />
+    <link rel="next" title="데모" href="08-lightgbm-cv.html" />
     <link rel="prev" title="데모" href="08-lr-cv.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,33 +130,104 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="03-pandas-eda.html">
-   3장. Pandas
+  <a class="reference internal" href="01-intro.html">
+   1장. Intro
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04-numpy-lr.html">
-   4장. Numpy, 선형회귀, 로지스틱회귀
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-numerical-features.html">
-   5장. 수치형변수 가공
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-decision-trees.html">
-   6장. Scikit-learn, 결정트리
+  <a class="reference internal" href="02-setup.html">
+   2장. Setup
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="07-lightgbm.html">
-   7장. Random Forest, GBM (1)
+  <a class="reference internal" href="03-pandas-intro.html">
+   3장. Pandas
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="03-pandas.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-pandas-eda.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="04-numpy-intro.html">
+   4장. Numpy, 선형회귀, 로지스틱회귀
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-numpy-lr.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="05-numerical-features-intro.html">
+   5장. 수치형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-numerical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="06-scikit-learn-intro.html">
+   6장. Scikit-learn, 결정트리
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-scikit-learn.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-decision-trees.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="07-rf-lgb-intro.html">
+   7장. Random Forest, GBM
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-rf-lgb.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="07-rf.html">
-     7장. Random Forest, GBM (2)
+     Random Forest 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-lightgbm.html">
+     LightGBM 실습
     </a>
    </li>
   </ul>
@@ -130,28 +235,38 @@
   </i>
  </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="08-lightgbm-cv.html">
-   8장. Cross-Validation, Stacking (1)
+  <a class="reference internal" href="08-cv-stacking-intro.html">
+   8장. Cross-Validation, Stacking
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="08-cv-stacking.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="08-lr-cv.html">
-     8장. Cross-Validation, Stacking (2)
+     로지스틱 회귀 CV 실습
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8장. Cross-Validation, Stacking (3)
+     Random Forest CV 실습
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08-stacking-lgb.html">
-     8장. Cross-Validation, Stacking (4)
+    <a class="reference internal" href="08-lightgbm-cv.html">
+     LightGBM CV 실습
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-stacking-lr.html">
-     8장. Cross-Validation, Stacking (5)
+     로지스틱 회귀 스태킹 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-stacking-lgb.html">
+     LightGBM 스태킹 실습
     </a>
    </li>
   </ul>
@@ -159,42 +274,89 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="09-lightgbm-hyperopt.html">
-   9장. 모델 튜닝, Hyperopt, Optuna (1)
+  <a class="reference internal" href="09-tuning-intro.html">
+   9장. 모델 튜닝, Hyperopt, Optuna
   </a>
   <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-tuning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-lightgbm-hyperopt.html">
+     Hyperopt 실습
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-lightgbm-optuna.html">
-     9장. 모델 튜닝, Hyperopt, Optuna (2)
+     Optuna 실습
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-categorical-features.html">
-   11장. 범주형변수
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="10-pipeline-make-intro.html">
+   10장. Pipeline, Make
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-pipeline-make.html">
+     이론
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-nn-cv.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="11-categorical-features-intro.html">
+   11장. 범주형변수 가공
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-categorical-features.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="12-nn-intro.html">
    12장. 신경망, Keras
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-keras.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-nn-cv.html">
+     실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-lr-tfidf.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="13-text-features-intro.html">
    13장. 문자열변수 가공
   </a>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="14-cnn-emb.html">
-   14장. Embedding, RNN (1)
-  </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="14-lstm-emb.html">
-     14장. Embedding, RNN (2)
+    <a class="reference internal" href="13-text-features.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-lr-tfidf.html">
+     실습
     </a>
    </li>
   </ul>
@@ -202,13 +364,52 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="15-bert.html">
-   15장. 선학습 임베딩, 전이학습 (1)
+  <a class="reference internal" href="14-embeddings-intro.html">
+   14장. Embedding, RNN
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="15-lstm-glove.html">
-     15장. 선학습 임베딩, 전이학습 (2)
+    <a class="reference internal" href="14-embeddings.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-cnn-emb.html">
+     CNN - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-emb.html">
+     LSTM - Embeddings 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-lstm-glove.html">
+     LSTM - GloVe 실습
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-attention.html">
+     Attention 실습
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="15-transfer-learning-intro.html">
+   15장. 선학습 임베딩, 전이학습
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-transfer-learning.html">
+     이론
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-bert.html">
+     실습
     </a>
    </li>
   </ul>
@@ -216,8 +417,23 @@
   </i>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="16-attention.html">
+  <a class="reference internal" href="16-data-augmentation.html">
    16장. Data Augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-cnn.html">
+   17장. CNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-image-classification.html">
+   18장. Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-post-processing.html">
+   19장. 후처리, 기타팁
   </a>
  </li>
 </ul>
@@ -276,11 +492,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/SDSTony/dku-kaggle-class"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/kaggler-tv/dku-kaggle-class"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SDSTony/dku-kaggle-class/issues/new?title=Issue%20on%20page%20%2Flectures/08-rf-cv.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kaggler-tv/dku-kaggle-class/issues/new?title=Issue%20on%20page%20%2Flectures/08-rf-cv.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -301,7 +517,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/SDSTony/dku-kaggle-class/master?urlpath=tree/lectures/08-rf-cv.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kaggler-tv/dku-kaggle-class/master?urlpath=tree/lectures/08-rf-cv.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -922,7 +1138,7 @@ Name: class, dtype: int64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="08-lr-cv.html" title="previous page">데모</a>
-    <a class='right-next' id="next-link" href="08-stacking-lgb.html" title="next page">데모</a>
+    <a class='right-next' id="next-link" href="08-lightgbm-cv.html" title="next page">데모</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -931,7 +1147,10 @@ Name: class, dtype: int64
         
           By Kaggler-TV<br/>
         
-            &copy; Copyright 2020-2021.<br/>
+            &copy; Copyright 2020-.<br/>
+          <div class="extra_footer">
+            <div class="row_footer"> Website organized by <a href="https://github.com/SDSTony">Sungjin Ahn</a> </div>
+          </div>
       </p>
     </div>
   </footer>
